@@ -88,16 +88,16 @@ File screenshot = $("#popup-download-button").screenshot();
 ......................................................................
 Некоторые полезные функции:
 
-- .clear(); 					                    // очистить текстовое поле
+- .clear(); 					            // очистить текстовое поле
 -$$(".no-underline").get(25).scrollTo(); 	// - сделать скролл до локатора
--$(by("title", "Логотип Acer")).isImage();// - подтвердить, что локатор - картинка
--zoom(2.5); 					                    // - Увеличить в 2.5 раза
--Configuration.browser = "chrome"; 	      // - Задаем размер браузера, ставим над “open”
+-$(by("title", "Логотип Acer")).isImage();  // - подтвердить, что локатор - картинка
+-zoom(2.5); 					            // - Увеличить в 2.5 раза
+-Configuration.browser = "chrome"; 	        // - Задаем размер браузера, ставим над “open”
         Configuration.browserSize = "1500x1200";
--Configuration.savePageSource = false;    // - При падении теста отключаем создание html файла
--actions().clickAndHold($(By.id("logo"))) // - кликает и зажимает
--$("div").hover(); 				                // - Навести курсор на локатор
--navigator.back(); (или back();)				  // - Вернуться на предыдущую страницу 
+-Configuration.savePageSource = false;      // - При падении теста отключаем создание html файла
+-actions().clickAndHold($(By.id("logo")))   // - кликает и зажимает
+-$("div").hover(); 				            // - Навести курсор на локатор
+-navigator.back(); (или back();)			// - Вернуться на предыдущую страницу 
 -$(By.id("myParagraph")).should(textCaseSensitive("My text")) // где textCaseSensitive Условие, указывающее, что элемент HTML имеет определенное значение или текст с учетом прописных и строчных букв.
 -$("#results").shouldHave(text("Selenide.org"));             // Само подождёт, пока у элемента появится нужный текст
 ......................................................................
@@ -179,7 +179,7 @@ List<String> links = new ArrayList<String>();
 
 open("https://www.google.com.ua/");
       $(By.name("q")).val("Selenide").pressEnter();
-        ElementsCollection link = $$(By.tagName("a")); //или $$("div.g>div>div.rc>h3.r>a");// идем к дочернему “а” чтобы показать только найденный список "Selenide"
+        ElementsCollection link = $$(By.tagName("a")); //или $$("div.g>div>div.rc>h3.r>a") или $$("#ires .g .r a");// идем к дочернему “а” чтобы показать только найденный список "Selenide"
             for (int i = 0; i<15; i++) {
             System.out.println(link.get(i).getAttribute("text"));
             System.out.println(link.get(i).getAttribute("href"));
