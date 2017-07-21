@@ -21,6 +21,29 @@ $(By.name("q")).val("Docker").pressEnter();Thread.sleep(1000);
            $(By.id("pnnext")).click(); Thread.sleep(500);
        }
 .......................................................................................
+В каждой открытой странице ищем нужный элемент(открыват все в одной вкладке)
+
+open("https://google.com/");
+        $(By.name("q")).val("father shop").pressEnter();
+        for (int y = 0; y < 2; y++) {
+            for (int i = 0; i < 10; i++) {
+                SelenideElement link = $("#ires .g", i).find("a");       
+                link.click();Thread.sleep(1000);
+                selenLocator();
+                back();
+            }
+            $(By.id("pnnext")).click();
+            Thread.sleep(500);
+        }
+    }
+    public void selenLocator() throws InterruptedException {
+        SelenideElement locator = $(byText("hello@fathers.pl"));
+        if (locator.exists()) {                   // Пытаемся найти в открытой вкладке "Текст"
+            locator.scrollTo().contextClick();
+            Thread.sleep(2000);                   // Если условие выполнилось, то жмем на "Текст"
+        }
+    }
+.......................................................................................
 В Браузере, в “консоле разработчика”, из списка, надо найти ссылку “а”
 
 var linksElems = $$("a");
