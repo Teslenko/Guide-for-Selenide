@@ -1,0 +1,45 @@
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.TestRule;
+import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*; // Library
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver; //Uses all the methods of Selenium
+
+public class Test {
+	final String browserName = "chrome";
+	final int timeOut = 5000;
+	final String browserPropertyName = "webdriver.chrome.driver";
+	final String browserPropertyPath = "./src/main/resources/chromedriver";
+
+	@org.junit.Test
+	public void setup() throws InterruptedException  { //Created metod test1
+    	System.setProperty("java.util.logging.SimpleFormatter.format", "%1$tT %4$s %5$s%6$s%n");// - This line makes logs more readable
+	open("https://www.google.com.ua");                			                // Open page
+    	$(by("type", "text")).val("Enter text on google").pressEnter();     //Enter Text
+	    $$("a.gb_P").shouldHave(atribute(“data-pid”, ”2”))                  //We check that the locator has attributes
+      $$(("._Gs")).get(3).shouldBe(visible).click(); 			                //Click the button
+  	  Thread.sleep(2000); 
+      $("li", 5);								                                          // = $$(“li”).get(5);
+}    
+	Configuration.holdBrowserOpen = true;     //If necessary, after the test is complete leave the browser OPEN 
+	public static class SelectsPage {         //Example Page Object //http://ru.selenide.org/documentation/page-objects.html
+    	@FindBy(xpath = "//select[@name='domain']")
+    	public SelenideElement domainSelect;
+    	@FindBy(id = "status")
+    	public SelectsPage status;
+	}
+
+@Rule
+    public TestRule report = new com.codeborne.selenide.junit.TextReport().onFailedTest(true);//Makes a readable Report:
+
+ @Before
+   	 public void before(){
+ 	 Configuration.browser = browserName;
+ 	 Configuration.timeout = timeOut;
+ 	 System.setProperty(browserPropertyName, browserPropertyPath); // Initialize the browser
+   System.setProperty("java.util.logging.SimpleFormatter.format", "%1$tT %4$s %5$s%6$s%n");//Adds information to report 
+    }
+}
