@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.rules.TestRule;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*; // Library
