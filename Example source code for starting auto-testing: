@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Condition.*;
@@ -16,7 +17,7 @@ public class Test {
 
 	@org.junit.Test
 	public void setup() throws InterruptedException  { //Created metod test1
-    	System.setProperty("java.util.logging.SimpleFormatter.format", "%1$tT %4$s %5$s%6$s%n");// - This line makes logs more readable
+    	
 	open("https://www.google.com.ua");                			                // Open page
     	$(by("type", "text")).val("Enter text on google").pressEnter();     //Enter Text
 	    $$("a.gb_P").shouldHave(atribute(“data-pid”, ”2”))                  //We check that the locator has attributes
