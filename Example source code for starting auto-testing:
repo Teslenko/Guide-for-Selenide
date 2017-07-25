@@ -14,7 +14,8 @@ public class Test {
 	final String browserName = "chrome";
 	final int timeOut = 5000;
 	final String browserPropertyName = "webdriver.chrome.driver";
-	final String browserPropertyPath = "./src/main/resources/chromedriver";
+	final String browserPropertyPath = "./src/main/resources/chromedriver"; 
+	//In Windows "C:\\Users\\Тесл\\IdeaProjects\\New_Project\\src\\main\\resources\\chromedriver.exe"
 
 	@org.junit.Test
 	public void setup() throws InterruptedException  { //Created metod test1
