@@ -214,4 +214,26 @@ ElementsCollection link = $$(By.name("q"));
         System.out.println("Height element = "+link.get(i).getSize().height);
         }
 ......................................................................
-
+В каждой открытой вкладке ищем нужный  элемент
+  
+open("https://www.google.ru/");
+$(By.name("q")).val("Docker").pressEnter();Thread.sleep(1000);
+       for ( int t=0; t < 2; t++) {           // обворачиваем весь тест в оболочку цикла
+           for (int p = 0; p < 1; p++) {   // обворачиваем основной функционал теста в цикл
+               ElementsCollection links = $$("div.g>div>div.rc>h3.r>a");    // приравниваем к дочерней ссылки
+               for (SelenideElement elem : links) {                      // представление каждого элемента к массиву
+                   elem.click();                                                         // кликаем по каждой найденной Теме
+                   switchTo().window(1); Thread.sleep(2500);     // переходим в новую вкладку
+                   for ( int q=0; q<1; q++) {
+                       SelenideElement locator = $(byText("openHAB 2 inside a Docker Container"));
+                       if (locator.exists()){			              // Пытаемся найти в открытой вкладке "Текст"
+                           locator.scrollTo().contextClick();sleep(3000); // Если условие выполнилось, то жмем на "Текст"
+                       }
+                       switchTo().window(1).close(); // если не нашли то закрываем вкладку
+                       switchTo().window(0);Thread.sleep(500);
+                   }
+               }
+           }
+           $(By.id("pnnext")).click(); Thread.sleep(500);
+       }
+......................................................................
