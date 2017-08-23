@@ -1,11 +1,9 @@
 Использование dragAndDropTo для перемещения блока
 (Живой пример)
-......................................................................
-open("https://jqueryui.com/resources/demos/draggable/snap-to.html");  
-Thread.sleep(1000);
+
+open("https://jqueryui.com/resources/demos/draggable/snap-to.html");  Thread.sleep(1000);
 $(".draggable.ui-widget-content.ui-draggable.ui-draggable-handle").
-dragAndDropTo($("#snaptarget")); 
-Thread.sleep(1000);
+dragAndDropTo($("#snaptarget")); Thread.sleep(1000);
 ......................................................................
 Пример по переходу через iframe:
 
