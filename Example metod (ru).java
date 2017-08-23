@@ -82,6 +82,12 @@ for ( int i=0; i<10; i++) {
 File cv = $("#popup-download-button").download(); or
 File report = $("input#submit").download();
 ......................................................................
+Закачать фаил "uploadFile"
+
+open("http://document.online-convert.com/ru/convert-to-pdf");  
+        $(by("name", "file")).uploadFile(new File("C:\\Users\\User\\Downloads\\lNV7I8VcRNM.jpg")); 
+        $(by("id","submit_button")).scrollTo().doubleClick(); Thread.sleep(10000);
+......................................................................    
 Сделать скриншот отдельного элемента  
 
 File screenshot = $("#popup-download-button").screenshot();
