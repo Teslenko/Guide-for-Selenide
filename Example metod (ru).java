@@ -220,7 +220,8 @@ open("https://www.google.ru/");
 $(By.name("q")).val("Docker").pressEnter();Thread.sleep(1000);
        for ( int t=0; t < 2; t++) {           // обворачиваем весь тест в оболочку цикла
            for (int p = 0; p < 1; p++) {   // обворачиваем основной функционал теста в цикл
-               ElementsCollection links = $$("div.g>div>div.rc>h3.r>a");    // приравниваем к дочерней ссылки
+                ElementsCollection links = $$("#ires .g h3 a");    // приравниваем к дочерней ссылки
+                                    // или $$("div.g>div>div.rc>h3.r>a");
                for (SelenideElement elem : links) {                      // представление каждого элемента к массиву
                    elem.click();                                                         // кликаем по каждой найденной Теме
                    switchTo().window(1); Thread.sleep(2500);     // переходим в новую вкладку
