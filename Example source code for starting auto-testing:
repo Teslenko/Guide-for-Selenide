@@ -16,7 +16,7 @@ public class Test {
 	final String browserPropertyName = "webdriver.chrome.driver";
 	final String browserPropertyPath = "./src/main/resources/chromedriver"; 
 	//In Windows "C:\\Users\\Тесл\\IdeaProjects\\New_Project\\src\\main\\resources\\chromedriver.exe"
-
+	//Or get place chromedriver.exe on "Windows/System32" folder and webdriver worked
 	@org.junit.Test
 	public void setup() throws InterruptedException  { //Created metod test1
     	
