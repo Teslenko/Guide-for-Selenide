@@ -26,8 +26,9 @@ public class Test {
       $$(("._Gs")).get(3).shouldBe(visible).click(); 			   //Click the button
   	  Thread.sleep(2000); 
       $("li", 5);							    // = $$(“li”).get(5);
+      Configuration.holdBrowserOpen = true;     //If necessary, after the test is complete leave the browser OPEN 
 }    
-	Configuration.holdBrowserOpen = true;     //If necessary, after the test is complete leave the browser OPEN 
+	
 	public static class SelectsPage {         //Example Page Object //http://ru.selenide.org/documentation/page-objects.html
     	@FindBy(xpath = "//select[@name='domain']")
     	public SelenideElement domainSelect;
