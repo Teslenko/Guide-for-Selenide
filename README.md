@@ -11,4 +11,4 @@ https://sites.google.com/a/chromium.org/chromedriver/downloads - From here, down
 
 https://geteasyqa.com/ru/qa/best-selenium-interview-questions/ - Top 100+ questions on Selenium and many different sections devoted to the testing in general. Also, here are given general concepts about locators, and many other useful things.
 
-https://www.youtube.com/watch?v=Wp6uS7CmivE - How to install Java JDK on Windows 10 ( with JAVA_HOME )
+https://www.youtube.com/watch?v=Wp6uS7CmivE - How to install Java JDK on Windows 10 ( with JAVA_HOME ) - http://www.oracle.com/technetwork/java/javase/downloads/index.html - Download JDK
