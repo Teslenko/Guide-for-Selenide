@@ -6,7 +6,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.CollectionCondition.size; 
 import static com.codeborne.selenide.Selenide.*; // Library
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver; //Uses all the methods of Selenium
 
