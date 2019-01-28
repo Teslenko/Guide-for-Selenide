@@ -49,7 +49,7 @@ open("https://google.com/");
 var linksElems = $$("a");
 var linksArray = [];
 for (var i = 0; i < linksElems.length; i++) {
-  linksArray.push({id: i, URI: linksElems[i].href, elem: linksElems[i]/});
+  linksArray.push({id: i, URI: linksElems[i].href, elem: linksElems[i]});
 }
 function getElemNumberByLink(array, URI) {
   for (var i = 0; i < array.length; i++) {
